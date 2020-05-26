@@ -1,6 +1,6 @@
 # kb
 
-`kb` is a command line client for Kanboard.
+`kb` is a command line client for [Kanboard](https://kanboard.org/).
 
 ## Installation
 
@@ -45,6 +45,36 @@ Available Commands:
 
 `kb help` provides more detailed usage information. This information is
 also available in the [docs/](docs/kb.md) directory.
+
+### Common arguments
+
+Most commands accept the project, columns, and search terms on the command
+line by prepending them with a sigil:
+
+| Sigil | Meaning |
+| ----- | ------- |
+| `%%` | Project | 
+| `%` | Column | 
+| `^%` | Source Column | 
+| `/` | Search query |
+
+For columns and projects, the text following the sigil a prefix. If there
+are multiple items matching this prefix, `kb` will prompt for a more
+specific item.
+
+For example, given a Kanboard instance with columns `Today`, `This week`,
+and `Backlog`:
+
+| Argument | Meaning |
+| -------- | ------- |
+| %today | Uses `Today` column |
+| %b | Uses `Backlog` column |
+| %t | Prompts the user to select between `Today` and `This week` |
+
+Some commands (such as [kb add](docs/kb_add.md)) also take `+` as a final
+argument, to signify extended input. There needs to be a space before the
+`+` on the command line.
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
