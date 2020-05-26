@@ -8,7 +8,7 @@ for platform in $PLATFORMS; do
   export GOOS="${platform%/*}"
   export GOARCH="${platform#*/}"
   echo "Building for ${GOOS}/${GOARCH}..."
-  out="$DEST/${NAME}_${GOOS}_${GOARCH}_$(git describe --always --dirty)"
+  out="$DEST/${NAME}_${GOOS}_${GOARCH}_$(git describe --tags --always --dirty)"
   post="gzip -v $out"
   if [ "$GOOS" = "windows" ]; then
     out="${out}.exe"
