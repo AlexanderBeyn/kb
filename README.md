@@ -5,8 +5,8 @@
 ## Installation
 
 `kb` executable has no dependencies. Download the 
-[latest release](releases/latest), uncompress, and place somewhere in your
-executable path.
+[latest release](https://github.com/AlexanderBeyn/kb/releases/latest),
+unzip, and place somewhere in your executable path.
 
 Alternatively, `kb` can be installed with `go get` and `go install`:
 ```
