@@ -2,11 +2,11 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/AlexanderBeyn/kb/api"
+	"github.com/AlexanderBeyn/kb/lib"
+	"github.com/AlexanderBeyn/kb/types"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"kb/api"
-	"kb/lib"
-	"kb/types"
 )
 
 var moveCmd = &cobra.Command{

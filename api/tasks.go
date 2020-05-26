@@ -2,7 +2,7 @@ package api
 
 import (
 	"fmt"
-	"kb/types"
+	"github.com/AlexanderBeyn/kb/types"
 )
 
 func GetTasks(project int, column int, filter *string) ([]*types.Task, error) {

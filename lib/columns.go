@@ -3,9 +3,9 @@ package lib
 import (
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/AlexanderBeyn/kb/api"
+	"github.com/AlexanderBeyn/kb/types"
 	"github.com/spf13/viper"
-	"kb/api"
-	"kb/types"
 )
 
 func PickColumn(label string, project types.Project, columnFilter *string) (*types.Column, error) {

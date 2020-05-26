@@ -1,4 +1,4 @@
-module kb
+module github.com/AlexanderBeyn/kb
 
 go 1.14
 

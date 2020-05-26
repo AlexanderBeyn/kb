@@ -1,10 +1,10 @@
 package lib
 
 import (
+	"github.com/AlexanderBeyn/kb/api"
+	"github.com/AlexanderBeyn/kb/types"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"kb/api"
-	"kb/types"
 	"strings"
 )
 

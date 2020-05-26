@@ -3,9 +3,9 @@ package cmd
 import (
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/AlexanderBeyn/kb/lib"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"kb/lib"
 	"sort"
 	"strings"
 )

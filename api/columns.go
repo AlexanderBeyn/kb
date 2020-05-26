@@ -1,8 +1,8 @@
 package api
 
 import (
+	"github.com/AlexanderBeyn/kb/types"
 	"github.com/spf13/viper"
-	"kb/types"
 	"strings"
 	"time"
 )

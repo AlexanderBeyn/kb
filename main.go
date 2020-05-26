@@ -1,7 +1,7 @@
 package main
 
 import (
-	"kb/cmd"
+	"github.com/AlexanderBeyn/kb/cmd"
 	"log"
 )
 

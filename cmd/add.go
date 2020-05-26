@@ -3,10 +3,10 @@ package cmd
 import (
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/AlexanderBeyn/kb/api"
+	"github.com/AlexanderBeyn/kb/lib"
+	"github.com/AlexanderBeyn/kb/types"
 	"github.com/spf13/cobra"
-	"kb/api"
-	"kb/lib"
-	"kb/types"
 	"strings"
 )
 

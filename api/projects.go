@@ -1,7 +1,7 @@
 package api
 
 import (
-	"kb/types"
+	"github.com/AlexanderBeyn/kb/types"
 	"strings"
 )
 

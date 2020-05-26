@@ -3,8 +3,8 @@ package lib
 import (
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
-	"kb/api"
-	"kb/types"
+	"github.com/AlexanderBeyn/kb/api"
+	"github.com/AlexanderBeyn/kb/types"
 )
 
 func PickTask(label string, project types.Project, column types.Column, filter *string) (*types.Task, error) {
