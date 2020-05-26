@@ -10,8 +10,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:          "kb",
-	SilenceUsage: true,
+	Use:               "kb",
+	SilenceUsage:      true,
+	DisableAutoGenTag: true,
 }
 
 func Execute() {

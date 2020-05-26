@@ -3,3 +3,4 @@ dist/
 *.test
 *.out
 /kb
+.DS_Store
