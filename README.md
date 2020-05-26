@@ -14,20 +14,6 @@ $ go get -u github.com/AlexanderBeyn/kb
 $ go install github.com/AlexanderBeyn/kb
 ```
 
-## Configuration
-
-`kb` reads its configuration from `.kb.yaml` in your home directory. 
-Additionally, `kb` caches some data from the server in this file for 
-quicker responses.
-
-### Server access
-The quickest way to create a new configuration file is with 
-`kb config prompt`. This will prompt you for a Kanboard API URL, your
-username, and your password or API key.
-
-### Defaults
-The default project and column can be set with `kb config defaults`.
-
 ## Usage
 
 ```
@@ -45,6 +31,28 @@ Available Commands:
 
 `kb help` provides more detailed usage information. This information is
 also available in the [docs/](docs/kb.md) directory.
+
+### Examples
+
+```
+# Show tasks in the default column:
+kb show
+
+# Show tasks in the "done" column containing "great task":
+kb show %done "/great task"
+
+# Add a new task to the default column:
+kb add This is my new task
+
+# Add a new task to a column "backlog", prompting for a description:
+kb add %backlog This is a new backlog task +
+
+# Find a task matching "awesome" in the default column and move it to "done":
+kb move %done /awesome
+
+# Display all tasks in "backlog" and select one to move to "today":
+kb move ^%backlog %today
+```
 
 ### Common arguments
 
@@ -75,6 +83,19 @@ Some commands (such as [kb add](docs/kb_add.md)) also take `+` as a final
 argument, to signify extended input. There needs to be a space before the
 `+` on the command line.
 
+## Configuration
+
+`kb` reads its configuration from `.kb.yaml` in your home directory. 
+Additionally, `kb` caches some data from the server in this file for 
+quicker responses.
+
+### Server access
+The quickest way to create a new configuration file is with 
+`kb config prompt`. This will prompt you for a Kanboard API URL, your
+username, and your password or API key.
+
+### Defaults
+The default project and column can be set with `kb config defaults`.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
