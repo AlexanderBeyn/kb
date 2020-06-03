@@ -41,6 +41,9 @@ kb show
 # Show tasks in the "done" column containing "great task":
 kb show %done "/great task"
 
+# Show tasks from all columns containing "excellent":
+kb show %* /excellent
+
 # Add a new task to the default column:
 kb add This is my new task
 

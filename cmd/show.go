@@ -21,7 +21,10 @@ var showCmd = &cobra.Command{
 kb show
 
 # Show tasks in the "done" column containing "great task":
-kb show %done "/great task"`,
+kb show %done "/great task"
+
+# Show tasks from all columns containing "excellent":
+kb show %* /excellent`,
 
 	ValidArgsFunction: lib.CliSigilCompletions,
 	RunE: func(cmd *cobra.Command, args []string) error {
