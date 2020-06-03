@@ -8,13 +8,18 @@ import (
 func GetTasks(project int, column int, filter *string) ([]*types.Task, error) {
 	var tasks []*types.Task
 
-	if filter == nil {
-		filter = new(string)
+	query := "status:open"
+	if column != 0 {
+		query = fmt.Sprintf("%s column:%d", query, column)
+	}
+
+	if filter != nil {
+		query = fmt.Sprintf("%s %s", query, *filter)
 	}
 
 	err := RPC.CallFor(&tasks, "searchTasks", &types.SearchTasksParams{
 		ProjectID: project,
-		Query:     fmt.Sprintf("status:open column:%d %s", column, *filter),
+		Query:     query,
 	})
 	if err != nil {
 		return nil, err
