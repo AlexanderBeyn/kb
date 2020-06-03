@@ -1,8 +1,10 @@
 package api
 
 import (
+	"fmt"
 	"github.com/AlexanderBeyn/kb/types"
 	"github.com/spf13/viper"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -15,11 +17,14 @@ func GetColumns(project int, filter *string) ([]*types.Column, error) {
 		return nil, err
 	}
 
-	var cache []string
+	cache := make(map[string]map[string]interface{})
 	for _, column := range columns {
-		cache = append(cache, column.Title)
+		cache[strconv.Itoa(column.ID)] = map[string]interface{}{
+			"Title":    column.Title,
+			"Position": column.Position,
+		}
 	}
-	viper.Set("cache.columns", cache)
+	viper.Set(fmt.Sprintf("cache.columns.%d", project), cache)
 	viper.Set("cache.columns_updated", time.Now())
 	err = viper.WriteConfig()
 	if err != nil {

@@ -1,6 +1,7 @@
 package lib
 
 import (
+	"fmt"
 	"github.com/AlexanderBeyn/kb/api"
 	"github.com/AlexanderBeyn/kb/types"
 	"github.com/spf13/cobra"
@@ -26,12 +27,20 @@ func CliSigilCompletions(cmd *cobra.Command, args []string, toComplete string) (
 			out = append(out, project.Name)
 		}
 	case ColumnSigil, FromColumnSigil:
-		out = viper.GetStringSlice("cache.columns")
-		if len(out) > 0 {
+		projectId = viper.GetInt("selected.project.id")
+
+		cache := viper.GetStringMap(fmt.Sprintf("cache.columns.%d", projectId))
+		if len(cache) > 0 {
+			for _, column := range cache {
+				title, ok := column.(map[string]interface{})["title"].(string)
+				if !ok {
+					continue
+				}
+				out = append(out, title)
+			}
 			break
 		}
 
-		projectId = viper.GetInt("selected.project.id")
 		columns, err = api.GetColumns(projectId, &toComplete)
 		if err != nil {
 			return nil, cobra.ShellCompDirectiveError
