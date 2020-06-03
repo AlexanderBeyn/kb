@@ -17,7 +17,7 @@ func GetColumns(project int, filter *string) ([]*types.Column, error) {
 		return nil, err
 	}
 
-	cache := make(map[string]map[string]interface{})
+	cache := make(map[string]interface{})
 	for _, column := range columns {
 		cache[strconv.Itoa(column.ID)] = map[string]interface{}{
 			"Title":    column.Title,
